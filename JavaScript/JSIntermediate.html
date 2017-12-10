@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+    //-- part 1, starString--
+      function starString(num){
+        var x = '*'.repeat(num);
+        return x;
+      };
+
+    //-- part 2, drawStars--
+      function drawStars(array){
+        var dumarr = []
+        for(var i=0;i<array.length;i++){
+          if(typeof array[i] === "string"){    //-- part 3 --
+            dumarr[i] = (array[i].charAt(0).toLowerCase()).repeat(array[i].length)
+          }else if(typeof array[i] === "number"){
+            dumarr[i] = '*'.repeat(array[i]);
+          };
+        };
+        return console.log(dumarr)
+      };
+
+
+    </script>
+  </body>
+</html>

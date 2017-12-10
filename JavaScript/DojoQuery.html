@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <button id="first">What do I do?</button>
+    <button id="second">Oooh what about me?</button>
+    <script>
+      (function(){
+
+        var $Dojo = function(element){
+
+          class Dojo{
+
+            constructor(element){
+              this.element = document.getElementById(element);
+            };
+
+            click(callback){
+              this.element.addEventListener("click", callback);
+            };
+
+            hover(cbin, cbout=function(){}){
+              this.element.addEventListener("mouseover", cbin);
+              this.element.addEventListener("mouseout", cbout);
+            };
+          };
+
+          var tempelement = new Dojo(element);
+          return tempelement;
+        };
+
+        $Dojo("first").click(function(){
+          console.log("You clicked me!")
+        });
+        $Dojo("second").hover(
+          function(){console.log("I'm scared to be clicked.")},
+          function(){console.log("Thank you!")}
+          );
+
+        return $Dojo;
+      }());
+
+    </script>
+  </body>
+</html>

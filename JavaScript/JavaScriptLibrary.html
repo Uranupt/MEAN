@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      var _ = {
+       map: function(array, callback) {
+         let temparr = [];
+         for(let i=0;i<array.length;i++){
+           temparr.push(callback(array[i]));
+         };
+         return temparr;
+       },
+       reduce: function(array, callback, [memo]) {
+         if (memo == false){
+           memo = array.shift();
+         };
+         do{
+          callback(array.shift(), memo);
+         }while(array.length>0);
+         return memo
+       },
+       find: function(array, callback) {
+         for(let i=0;i<array.length;i++){
+           if (callback(array[i])){
+             return array[i]
+           };
+         };
+       },
+       filter: function(array, callback) {
+         let temparr = [];
+         for(let i=0;i<array.length;i++){
+           if (callback(array[i])){
+             temparr.push(array[i])
+           };
+         };
+         return temparr;
+       },
+       reject: function() {
+         let temparr = [];
+         for(let i=0;i<array.length;i++){
+           if (callback(array[i]) == false){
+             temparr.push(array[i])
+           };
+         };
+         return temparr;
+       }
+     }
+    // you just created a library with 5 methods!
+    </script>
+  </body>
+</html>

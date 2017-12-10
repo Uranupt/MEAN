@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+    function magic_multiply(x, y){
+      if(x == 0 && y == 0){
+        return "All inputs 0.";
+      }else if (typeof y == "string"){
+        return "Cannot multiply by string.";
+      }else{
+        if(typeof x == "array"){
+          for(var i=0; i<x.length;i++){
+            x[i] = x[i]*y;
+          };
+        }else if(typeof x == "string"){
+          x = x.repeat(y);
+        }else{
+          x = x*y;
+        };
+        return x;
+      };
+    };
+    </script>
+  </body>
+</html>

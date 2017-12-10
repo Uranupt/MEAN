@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul>
+<script>
+    function appendList(array, id){
+      for(var i=0;i<array.length;i++){
+        var templi = document.createElement("li");
+        templi.innerHTML = array[i];
+        document.getElementById(id).appendChild(templi);
+      };
+    };
+
+      function superAppend(array, element, id){
+        for(var i=0;i<array.length;i++){
+          var templi = document.createElement(element);
+          templi.innerHTML = array[i];
+          document.getElementById(id).appendChild(templi);
+        };
+      };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id);
+</script>
+</body>
+</html>

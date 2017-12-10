@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function Ninja(name, health=100, spd=3, str=3){
+        const self = this;
+        this.name = name;
+        this.health = health;
+        let speed = spd;
+        let strength = str;
+
+        this.sayName = function(){
+          console.log(self.name)
+        };
+
+        this.showStats = function(){
+          console.log("Health: "+self.health);
+          console.log("Speed: "+speed);
+          console.log("Strength: "+strength);
+        };
+
+        this.drinkSake = function(){
+          self.health += 10;
+        };
+
+        this.punch = function(oninja){
+          if(oninja instanceof Ninja){
+            oninja.health -= 5;
+            console.log(self.name+" punched "+oninja.name+" and dealt 5 damage.");
+          }else{
+            console.log("That is not a ninja");
+          };
+        };
+
+        this.kick = function(oninja){
+          if(oninja instanceof Ninja){
+            var strscale = 15*(strength)
+            oninja.health -= strscale
+            console.log(self.name+" kicked "+oninja.name+" and dealt "+strscale+" damage.")
+          }else{
+            console.log("That is not a ninja");
+          };
+        };
+      };
+    </script>
+  </body>
+</html>

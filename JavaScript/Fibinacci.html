@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function fib(){
+        if(!window.prev){
+          var prev = 0;
+        };
+        if(!window.next){
+          var next = 0;
+        };
+        function nacci(){
+          if(next==0&&prev==0){
+            var prevtemp = 1;
+          }else{
+            var prevtemp = prev;
+          };
+          prev = next;
+          next += prevtemp;
+          console.log(next);
+        };
+        return nacci
+      };
+
+      var fibCounter = fib();
+      fibCounter();
+      fibCounter();
+      fibCounter();
+      fibCounter();
+      fibCounter();
+      fibCounter();
+    </script>
+  </body>
+</html>

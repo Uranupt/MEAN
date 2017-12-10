@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      class Ninja {
+          constructor(name, health=100, spd=3, str=3){
+            this.name = name;
+            this.health=health;
+            this.speed = spd;
+            this.strength = str;
+          };
+          sayName(){
+            console.log(this.name);
+          };
+          showStats(){
+            console.log("Health: "+this.health);
+            console.log("Strength: "+this.strength);
+            console.log("Speed: "+this.speed);
+          };
+          drinkSake(){
+            this.health += 10;
+          };
+      };
+
+      class Sensei extends Ninja {
+        constructor(name, health=200, spd=10, str=10, wis=10){
+          super(name, health, spd, str);
+          this.wisdom = wis;
+        };
+        speakWisdom(){
+          super.drinkSake();
+          console.log("Programming may save time, but it can never recover time already lost.");
+        };
+      };
+    </script>
+  </body>
+</html>
